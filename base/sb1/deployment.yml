@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sb1
+  labels:
+    app: sb1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sb1
+  template:
+    metadata:
+      labels:
+        app: sb1
+    spec:
+      containers:
+        - name: sb1
+          image: dockerhub.wfgmb.com:5000/poc/sb1:1.0
+          ports:
+            - containerPort: 8080
