@@ -3,34 +3,6 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: vs
-  namespace: vcs-eg-dev
-spec:
-  gateways:
-    - istio-system/cluster-ingressgateway
-  hosts:
-    - devops.wfgmb.com
-  http:
-    - match:
-        - uri:
-            exact: /dev-sb1
-      redirect:
-        uri: /dev-sb1/
-    - match:
-        - uri:
-            prefix: /dev-sb1/
-      rewrite:
-        uri: /
-      route:
-        - destination:
-            host: sb1
-            port:
-              number: 8080
----
-apiVersion: networking.istio.io/v1beta1
-kind: VirtualService
-metadata:
-  name: vs
-  namespace: vcs-eg-qa
 spec:
   gateways:
     - istio-system/cluster-ingressgateway

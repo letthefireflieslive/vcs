@@ -3,7 +3,6 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: vs
-  namespace: vcs-eg-qa
 spec:
   gateways:
     - istio-system/cluster-ingressgateway
