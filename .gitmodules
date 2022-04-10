@@ -1,0 +1,4 @@
+[submodule "base/cluster"]
+	path = base/cluster
+	url = ssh://git@bitbucket.webbfontaine.com:7999/proto/ph-k8s.git
+	branch = master
