@@ -11,12 +11,12 @@ spec:
   http:
     - match:
         - uri:
-            exact: /qa-sb1
+            exact: /dev-sb1
       redirect:
-        uri: /qa-sb1/
+        uri: /dev-sb1/
     - match:
         - uri:
-            prefix: /qa-sb1/
+            prefix: /dev-sb1/
       rewrite:
         uri: /
       route:
