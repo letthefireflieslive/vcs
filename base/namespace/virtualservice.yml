@@ -11,7 +11,12 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /dev-sb1
+            exact: /dev-sb1
+      redirect:
+        uri: /dev-sb1/
+    - match:
+        - uri:
+            prefix: /dev-sb1/
       rewrite:
         uri: /
       route:
