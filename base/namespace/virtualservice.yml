@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: virtualservice
+spec:
+  gateways:
+    - istio-system/cluster-ingressgateway
+  hosts:
+    - devops.wfgmb.com
+  http:
+    - match:
+        - uri:
+            prefix: /dev-sb1
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: sb1
+            port:
+              number: 8080
