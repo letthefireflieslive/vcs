@@ -18,3 +18,5 @@ spec:
         - name: sb1
           ports:
             - containerPort: 8080
+      imagePullSecrets:
+        - name: regcred
