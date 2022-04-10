@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sb1
+spec:
+  template:
+    spec:
+      containers:
+        - name: sb1
+          image: dockerhub.wfgmb.com:5000/poc/sb1:1.0
+          env:
+            - name: VISITOR
+              value: 'Mr. QA'

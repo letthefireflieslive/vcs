@@ -16,6 +16,5 @@ spec:
     spec:
       containers:
         - name: sb1
-          image: dockerhub.wfgmb.com:5000/poc/sb1:1.0
           ports:
             - containerPort: 8080
