@@ -5,7 +5,6 @@ namespace: vcs-eg-dev
 
 resources:
 - ../../../../base/sb1
-- ../../../../base/vs-dev
 
 patchesStrategicMerge:
 - deployment.yml

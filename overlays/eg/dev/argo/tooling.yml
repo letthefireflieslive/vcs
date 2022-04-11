@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-sb2
+  name: dev-tooling
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
   # Add a this finalizer ONLY if you want these to cascade delete.
@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: ssh://git@bitbucket.webbfontaine.com:7999/proto/vcs.git
     targetRevision: HEAD
-    path: ./overlays/eg/dev/sb2
+    path: ./overlays/eg/dev/tooling
 
   # Destination cluster and namespace to deploy the application
   destination:
