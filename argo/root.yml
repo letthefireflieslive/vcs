@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: ssh://git@bitbucket.webbfontaine.com:7999/proto/vcs.git
-    path: ./overlays/eg/dev/argo
+    path: ./argo/apps
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
