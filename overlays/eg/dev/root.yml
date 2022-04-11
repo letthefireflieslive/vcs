@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    path: ./overlays/eg/dev/**/argo.yml
+    path: ./overlays/eg/dev/argo
     repoURL: ssh://git@bitbucket.webbfontaine.com:7999/proto/vcs.git
     targetRevision: HEAD
   destination:
