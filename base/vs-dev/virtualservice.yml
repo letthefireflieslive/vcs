@@ -24,3 +24,18 @@ spec:
             host: sb1
             port:
               number: 8080
+    - match:
+        - uri:
+            exact: /dev-sb2
+      redirect:
+        uri: /dev-sb2/
+    - match:
+        - uri:
+            prefix: /dev-sb2/
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: sb2
+            port:
+              number: 8080
