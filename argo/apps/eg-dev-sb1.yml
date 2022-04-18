@@ -13,7 +13,7 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: ssh://git@bitbucket.webbfontaine.com:7999/proto/vcs.git
+    repoURL: git@github.com:letthefireflieslive/vcs.git
     targetRevision: HEAD
     path: ./overlays/eg/dev/sb1
 
