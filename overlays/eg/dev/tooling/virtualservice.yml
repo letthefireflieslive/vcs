@@ -5,7 +5,7 @@ metadata:
   name: vs
 spec:
   gateways:
-    - istio-system/cluster-ingressgateway
+    - istio-system/ingress-gateway
   hosts:
     - 45.118.132.73
   http:
