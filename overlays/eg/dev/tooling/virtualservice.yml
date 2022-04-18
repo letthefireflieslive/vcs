@@ -7,7 +7,7 @@ spec:
   gateways:
     - istio-system/cluster-ingressgateway
   hosts:
-    - devops.wfgmb.com
+    - 45.118.132.73
   http:
     - match:
         - uri:
