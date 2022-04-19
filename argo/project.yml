@@ -26,4 +26,6 @@ spec:
     namespace: vcs-bj-qa
   - server: https://kubernetes.default.svc
     namespace: vcs-bj-uat
-
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
