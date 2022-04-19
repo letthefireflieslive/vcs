@@ -12,9 +12,11 @@ The whole build to K8s deployment configuration for VCS applications
 `argocd login`
 
 ## Create all VCS resources
-`argocd app create root -f argo/root.yml`
+`argocd app create vcs-root -f argo/root.yml`
 
-## Adding new app or K8s resource? 
+# Maintenance
+
+## Adding new Argo app or K8s resource? 
 Add the entry at `./argo/apps`
 
 ## K8s Configuration Update?

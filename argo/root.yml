@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vcs-dev
+  name: vcs-root
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
   project: default
   source:
-    repoURL: git@github.com:letthefireflieslive/vcs.git
+    repoURL: https://github.com/letthefireflieslive/k8s-ph.git
     path: ./argo/apps
     targetRevision: HEAD
   syncPolicy:
