@@ -7,7 +7,7 @@ spec:
   gateways:
     - istio-system/ingress-gateway
   hosts:
-    - 192.53.175.125
+    - 45.118.132.73
   http:
     - match:
         - uri:
