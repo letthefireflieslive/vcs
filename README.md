@@ -12,7 +12,10 @@ The whole build to K8s deployment configuration for VCS applications
 `argocd login`
 
 ## Create all VCS resources
-`argocd app create vcs-root -f argo/root.yml`
+```
+argocd proj create vcs -f argo/project.yml
+argocd app create vcs-root -f argo/root.yml
+```
 
 # Maintenance
 
