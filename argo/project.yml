@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: vcs-root
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: VCS Applications
+  sourceRepos:
+    - '*'
+  destinations:
+  - server: https://kubernetes.default.svc
+    namespace: argocd
+  - server: https://kubernetes.default.svc
+    namespace: vcs-eg-dev
+  - server: https://kubernetes.default.svc
+    namespace: vcs-eg-qa
+  - server: https://kubernetes.default.svc
+    namespace: vcs-eg-uat
+  - server: https://kubernetes.default.svc
+    namespace: vcs-eg-prod
+  - server: https://kubernetes.default.svc
+    namespace: vcs-bj-dev
+  - server: https://kubernetes.default.svc
+    namespace: vcs-bj-qa
+  - server: https://kubernetes.default.svc
+    namespace: vcs-bj-uat
+
