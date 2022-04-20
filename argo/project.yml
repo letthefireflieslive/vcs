@@ -13,6 +13,8 @@ spec:
   - server: https://kubernetes.default.svc
     namespace: argocd
   - server: https://kubernetes.default.svc
+    namespace: argoevents
+  - server: https://kubernetes.default.svc
     namespace: vcs-eg-dev
   - server: https://kubernetes.default.svc
     namespace: vcs-eg-qa
