@@ -107,7 +107,7 @@ spec:
   dependencies:
     - name: test-dep
       eventSourceName: github-sb1-code-change
-      eventName: example
+      eventName: github-sb1-code-change
   triggers:
     - template:
         name: webhook-workflow-trigger
