@@ -5,7 +5,6 @@ namespace: vcs-eg-qa
 
 resources:
   - ../../../../base/sb1
-  - ../../../../base/vs-qa
 
 patchesStrategicMerge:
   - deployment.yml
