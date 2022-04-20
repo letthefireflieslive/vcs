@@ -6,7 +6,7 @@ metadata:
 spec:
   webhook:
     example:
-      port: "12100"
+      port: "12000"
       endpoint: /sb1
       method: POST
 ---
@@ -17,6 +17,7 @@ metadata:
 spec:
   ports:
     - port: 12100
+      targetPort: 12000
       protocol: TCP
   selector:
     eventsource-name: github-sb1-code-change
