@@ -16,7 +16,7 @@ metadata:
   name: github-sb1-code-change
 spec:
   ports:
-    - port: 12100
+    - port: 12000
       targetPort: 12000
       protocol: TCP
   selector:
