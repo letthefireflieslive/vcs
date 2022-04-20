@@ -35,5 +35,5 @@ Add the entry at `./argo/apps`
 
 ## K8s Configuration Update?
 Git commit and push it, ArgoCD will pick it up. 
-You can also manually hit the "sync" button in argo app
+You can also manually hit the "referesh"/"sync" button in argo app
 
