@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: sb1
-          image: dolegnoban/sb1:1.0
+          image: legnoban/sb1:1.0
           env:
             - name: VISITOR
               value: 'Mr. QA'
