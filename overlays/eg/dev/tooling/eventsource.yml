@@ -3,10 +3,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
   name: github-sb1-code-change
+  namespace: argoevents
 spec:
   webhook:
     example:
-      port: "12000"
+      port: "12001"
       endpoint: /sb1
       method: POST
 ---
@@ -14,10 +15,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: github-sb1-code-change
+  namespace: argoevents
 spec:
   ports:
-    - port: 12000
-      targetPort: 12000
+    - port: 12001
+      targetPort: 12001
       protocol: TCP
   selector:
     eventsource-name: github-sb1-code-change
