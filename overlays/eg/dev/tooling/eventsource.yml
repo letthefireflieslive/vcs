@@ -31,12 +31,14 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: operate-workflow-sa
+  namespace: argoevents
 ---
 # Similarly you can use a ClusterRole and ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: operate-workflow-role
+  namespace: argoevents
 rules:
   - apiGroups:
       - argoproj.io
@@ -52,6 +54,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: operate-workflow-role-binding
+  namespace: argoevents
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -65,6 +68,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: workflow-role
+  namespace: argoevents
 rules:
   # pod get/watch is used to identify the container IDs of the current pod
   # pod patch is used to annotate the step's outputs back to controller (e.g. artifact location)
@@ -90,6 +94,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: workflow-role-binding
+  namespace: argoevents
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -103,6 +108,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
   name: webhook
+  namespace: argoevents
 spec:
   template:
     serviceAccountName: operate-workflow-sa
