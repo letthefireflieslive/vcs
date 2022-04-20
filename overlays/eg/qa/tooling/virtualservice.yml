@@ -1,0 +1,41 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: vs
+spec:
+  gateways:
+    - istio-system/ingress-gateway
+  hosts:
+    - 45.118.132.73
+  http:
+    - match:
+        - uri:
+            exact: /qa-sb1
+      redirect:
+        uri: /qa-sb1/
+    - match:
+        - uri:
+            prefix: /qa-sb1/
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: sb1
+            port:
+              number: 8080
+    - match:
+        - uri:
+            exact: /qa-sb2
+      redirect:
+        uri: /qa-sb2/
+    - match:
+        - uri:
+            prefix: /qa-sb2/
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: sb2
+            port:
+              number: 8080

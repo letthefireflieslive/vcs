@@ -16,7 +16,7 @@ The whole build to K8s deployment configuration for VCS applications
 
 ## Create sealed secrets
 ```
-kubectl -n vcs-eg-dev create secret docker-registry container-reg-creds --docker-username=[username] --docker-password=[password] --docker-email=[email] --docker-server=[server] --dry-run=client -o yaml | kubeseal -o yaml > overlays/eg/dev/tooling/container-registry-creds.yml
+kubectl create secret docker-registry container-reg-creds --docker-username=[username] --docker-password=[password] --docker-email=[email] --docker-server=[server] --dry-run=client -o yaml | kubeseal -o yaml > overlays/eg/dev/tooling/container-registry-creds.yml
 git add . 
 git commit -m "Add container registry creds"
 git push

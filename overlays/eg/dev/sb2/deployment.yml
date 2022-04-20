@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sb2
+  labels:
+    type: app
+    app-type: springboot
+    env: dev
 spec:
   template:
     spec:
