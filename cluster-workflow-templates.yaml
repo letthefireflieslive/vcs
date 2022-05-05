@@ -50,8 +50,8 @@ spec:
         set -e
         git clone https://$(cat /.github/token)@github.com/{{inputs.parameters.repo_owner}}/{{inputs.parameters.repo_name}}      
         cd {{inputs.parameters.repo_name}}
-        git checkout {{inputs.parameters.branch}}
-        git pull origin {{inputs.parameters.branch}}
+        git checkout {{inputs.parameters.repo_branch}}
+        git pull origin {{inputs.parameters.repo_branch}}
         sleep 2
         echo BEFORE:
         cat {{inputs.parameters.deployment_path}}
@@ -62,7 +62,7 @@ spec:
         git config user.email "devops@webbfontaine.com"
         git add {{inputs.parameters.deployment_path}}
         git commit -m "Upgraded {{inputs.parameters.deployment_path}} with the tag {{inputs.parameters.tag}}"
-        git push --set-upstream origin {{inputs.parameters.branch}}
+        git push --set-upstream origin {{inputs.parameters.repo_branch}}
       volumeMounts:
       - name: github-access
         mountPath: /.github/
