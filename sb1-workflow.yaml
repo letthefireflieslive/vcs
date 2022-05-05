@@ -24,21 +24,21 @@ spec:
   - name: full
     dag:
       tasks:
-      - name: build
-        templateRef:
-          name: container-image
-          template: build-kaniko-git
-          clusterScope: true
-        arguments:
-          parameters:
-          - name: repo_url
-            value: git://github.com/letthefireflieslive/test-app-sb1
-          - name: repo_ref
-            value: refs/heads/main
-          - name: container_image
-            value: legnoban/test-app-sb1
-          - name: container_tag
-            value: "1.0.1"
+#      - name: build
+#        templateRef:
+#          name: container-image
+#          template: build-kaniko-git
+#          clusterScope: true
+#        arguments:
+#          parameters:
+#          - name: repo_url
+#            value: git://github.com/letthefireflieslive/test-app-sb1
+#          - name: repo_ref
+#            value: refs/heads/main
+#          - name: container_image
+#            value: legnoban/test-app-sb1
+#          - name: container_tag
+#            value: "1.0.1"
       - name: promote-dev
         templateRef:
           name: promote
@@ -50,13 +50,13 @@ spec:
               value: letthefireflieslive
             - name: repo_name
               value: vcs
-            - name: image_owner
-              value: legnoban
             - name: deployment_path
               value: overlays/eg/dev/sb1/deployment.yml
+            - name: image_owner
+              value: legnoban
             - name: image_name
-              value: "test-app-sb1"
+              value: test-app-sb1
             - name: tag
-              value: "1.0.1"
-        dependencies:
-          - build
+              value: 1.0.1
+#        dependencies:
+#          - build
