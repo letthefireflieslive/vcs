@@ -18,7 +18,7 @@ spec:
   - name: full
     dag:
       tasks:
-      - name: build-container-image
+      - name: build
         templateRef:
           name: container-image
           template: build-kaniko-git
