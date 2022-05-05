@@ -1,31 +1,31 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: dev-sb2
-#  # You'll usually want to add your resources to the argocd namespace.
-#  namespace: argocd
-#  # Add a this finalizer ONLY if you want these to cascade delete.
-#  finalizers:
-#    - resources-finalizer.argocd.argoproj.io
-#spec:
-#  # The project the application belongs to.
-#  project: vcs
-#
-#  # Source of the application manifests
-#  source:
-#    repoURL: https://github.com/letthefireflieslive/vcs.git
-#    targetRevision: HEAD
-#    path: ./overlays/eg/dev/sb2
-#
-#  # Destination cluster and namespace to deploy the application
-#  destination:
-#    server: https://kubernetes.default.svc
-#    namespace: vcs-eg-dev
-#
-#  syncPolicy:
-#    syncOptions:
-#      - CreateNamespace=true
-#    automated:
-#      prune: true
-#      selfHeal: true
-#
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-sb2
+  # You'll usually want to add your resources to the argocd namespace.
+  namespace: argocd
+  # Add a this finalizer ONLY if you want these to cascade delete.
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # The project the application belongs to.
+  project: vcs
+
+  # Source of the application manifests
+  source:
+    repoURL: https://github.com/letthefireflieslive/vcs.git
+    targetRevision: HEAD
+    path: ./overlays/eg/dev/sb2
+
+  # Destination cluster and namespace to deploy the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: vcs-eg-dev
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+
