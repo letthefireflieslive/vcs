@@ -14,6 +14,12 @@ spec:
       items:
         - key: .dockerconfigjson
           path: config.json
+  - name: github-access
+    secret:
+      secretName: github-access
+      items:
+        - key: token
+          path: token
   templates:
   - name: full
     dag:
