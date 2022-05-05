@@ -39,6 +39,7 @@ spec:
       - name: deployment_path
       - name: repo_owner
       - name: repo_name
+      - name: repo_branch
       - name: image_owner
       - name: image_name
       - name: tag
@@ -49,17 +50,19 @@ spec:
         set -e
         git clone https://$(cat /.github/token)@github.com/{{inputs.parameters.repo_owner}}/{{inputs.parameters.repo_name}}      
         cd {{inputs.parameters.repo_name}}
-        git checkout -b main
+        git checkout {{inputs.parameters.branch}}
+        git pull origin {{inputs.parameters.branch}}
         sleep 2
         echo BEFORE:
         cat {{inputs.parameters.deployment_path}}
         echo AFTER:
-        cat {{inputs.parameters.deployment_path}} | sed -e "s@- {{inputs.parameters.image_owner}}/{{inputs.parameters.image_name}}:.*@- {{inputs.parameters.image_owner}}/{{inputs.parameters.image_name}}:{{inputs.parameters.tag}}@g" | tee {{inputs.parameters.deployment_path}}
+        sed -i 's|{{inputs.parameters.image_owner}}\/{{inputs.parameters.image_name}}:.*|{{inputs.parameters.image_owner}}\/{{inputs.parameters.image_name}}:{{inputs.parameters.tag}}|g' {{inputs.parameters.deployment_path}}
+        cat {{inputs.parameters.deployment_path}}
         git config user.name "Argo Workflow Image Updater"
         git config user.email "devops@webbfontaine.com"
         git add {{inputs.parameters.deployment_path}}
         git commit -m "Upgraded {{inputs.parameters.deployment_path}} with the tag {{inputs.parameters.tag}}"
-        git push
+        git push --set-upstream origin {{inputs.parameters.branch}}
       volumeMounts:
       - name: github-access
         mountPath: /.github/

@@ -50,6 +50,8 @@ spec:
               value: letthefireflieslive
             - name: repo_name
               value: vcs
+            - name: repo_branch
+              value: master
             - name: deployment_path
               value: overlays/eg/dev/sb1/deployment.yml
             - name: image_owner
