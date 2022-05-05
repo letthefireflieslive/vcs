@@ -5,7 +5,7 @@ metadata:
   name: vs
 spec:
   gateways:
-    - istio-system/ingress-gateway
+    - istio-system/cluster-ingressgateway
   hosts:
     - devops.wfgmb.com
   http:

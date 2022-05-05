@@ -5,9 +5,9 @@ metadata:
   name: vs
 spec:
   gateways:
-    - istio-system/ingress-gateway
+    - istio-system/cluster-ingressgateway
   hosts:
-    - 45.118.132.73
+    - devops.wfgmb.com
   http:
     - match:
         - uri:
