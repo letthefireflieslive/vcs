@@ -32,4 +32,4 @@ spec:
           - name: container_image
             value: legnoban/test-app-sb2
           - name: container_tag
-            value: "1.0.0"
+            value: "1.0.1"

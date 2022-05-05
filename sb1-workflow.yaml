@@ -32,4 +32,25 @@ spec:
           - name: container_image
             value: legnoban/test-app-sb1
           - name: container_tag
-            value: "1.0.0"
+            value: "1.0.1"
+      - name: promote-dev
+        templateRef:
+          name: promote
+          template: promote
+          clusterScope: true
+        arguments:
+          parameters:
+            - name: repo_owner
+              value: letthefireflieslive
+            - name: repo_name
+              value: vcs
+            - name: image_owner
+              value: legnoban
+            - name: deployment_path
+              value: overlays/eg/dev/sb1/deployment.yml
+            - name: image_name
+              value: "test-app-sb1"
+            - name: tag
+              value: "1.0.1"
+        dependencies:
+          - build
