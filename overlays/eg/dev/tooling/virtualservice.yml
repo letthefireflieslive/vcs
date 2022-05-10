@@ -36,6 +36,6 @@ spec:
         uri: /
       route:
         - destination:
-            host: sb2
+            host: sb1
             port:
               number: 8080
