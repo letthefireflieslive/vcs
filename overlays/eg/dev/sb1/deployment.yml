@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: sb1
-          image: legnoban/test-app-sb1:1.0.4
+          image: legnoban/test-app-sb1:1.0.3
           env:
             - name: VISITOR
               value: 'Mr. Dev'
